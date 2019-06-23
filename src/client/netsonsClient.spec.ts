@@ -43,7 +43,7 @@ describe('NetsonsClient', () => {
             const response = new Response(expectedResponse);
             const headersRaw = init && init.headers && (init.headers as any as Headers).raw();
             expect(headersRaw && headersRaw.cookie).toEqual(['pagelimit=1; domviews={"status":"","views":"100","predicate":""}; a=a; b=b']);
-            return Promise.resolve(response)
+            return Promise.resolve(response);
         };
         when(authMock.getCookies()).thenReturn([
             'a=a',
@@ -52,5 +52,34 @@ describe('NetsonsClient', () => {
         const client = new NetsonsClient(fetchMock, instance(authMock));
         const returnedBody = await client.getDomainPage(domainId);
         expect(returnedBody).toEqual(expectedResponse);
+    });
+
+    it('should update a dns entry', async () => {
+        const domainId = 123123;
+        const oldEntry = {
+            name: 'www.example.it',
+            type: 'A',
+            content: '192.168.1.1',
+            ttl: 300,
+        };
+        const updatedEntry = {
+            name: 'www.example2.it',
+            type: 'A',
+            content: '192.168.1.2',
+            ttl: 500,
+        }
+        const fetchMock = async (url: RequestInfo, init?: RequestInit): Promise<Response> => {    
+            expect(url).toEqual(`https://www.netsons.com/manage/index.php?m=pdns&domainid=${domainId}&ajax=edit`);
+            const headersRaw = init && init.headers && (init.headers as any as Headers).raw();
+            expect(headersRaw && headersRaw.cookie).toEqual(['pagelimit=1; domviews={"status":"","views":"25","predicate":""}; tktviews={"status":"","views":"10","predicate":""}; a=a; b=b']);
+            expect(init && init.body).toEqual(`old_name=${oldEntry.name}&old_type=${oldEntry.type}&old_content=${oldEntry.content}&old_ttl=${oldEntry.ttl}&new_name=${updatedEntry.name}&new_type=${updatedEntry.type}&new_content=${updatedEntry.content}&new_ttl=${updatedEntry.ttl}`);
+            return Promise.resolve(new Response());
+        };
+        when(authMock.getCookies()).thenReturn([
+            'a=a',
+            'b=b',
+        ]);
+        const client = new NetsonsClient(fetchMock, instance(authMock));
+        expect(await client.updateDomainEntry(domainId, oldEntry, updatedEntry)).toEqual(true);
     });
 });
