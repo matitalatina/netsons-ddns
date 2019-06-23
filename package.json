@@ -1,0 +1,32 @@
+{
+  "name": "netsons-ddns",
+  "version": "1.0.0",
+  "description": "DDNS without Netsons API, because Netsons doesn't have it...",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "ddns",
+    "netsons"
+  ],
+  "author": "Mattia Natali",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node-fetch": "^2.3.7",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0",
+    "parcel-bundler": "^1.12.3",
+    "ts-jest": "^24.0.2",
+    "ts-mockito": "^2.3.1",
+    "typescript": "^3.5.2"
+  }
+}
