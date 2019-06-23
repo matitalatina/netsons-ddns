@@ -1,4 +1,3 @@
-import { Config } from './../config/config';
 import { Response, Headers, RequestInfo, RequestInit } from "node-fetch";
 import { NetsonsAuth } from './netsonsAuth';
 
@@ -55,7 +54,6 @@ export class NetsonsClient {
                     ["upgrade-insecure-requests", "1"],
                     ["cookie", cookieValue.join('; ')],
                 ]),
-                "body": undefined,
                 "method": "GET",
             });
 

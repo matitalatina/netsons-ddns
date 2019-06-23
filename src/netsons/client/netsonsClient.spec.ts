@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { Config } from './../config/config';
+import { Config } from '../../config/config';
 import { NetsonsClient } from "./netsonsClient";
 import { Response, Headers, RequestInfo, RequestInit } from 'node-fetch';
 import {mock, instance, when, deepEqual, verify, match} from 'ts-mockito';
