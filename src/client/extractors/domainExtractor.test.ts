@@ -1,0 +1,12 @@
+import {readFileSync} from 'fs';
+import path from 'path';
+import { DomainExtractor } from './domainExtractor';
+
+describe('DomainExtractor', () => {
+    it('should extract domain info', () => {
+        const domainPage: string = readFileSync(path.resolve(__dirname + '../../../../test/fixtures/domain.html')).toString();
+        const extractor = new DomainExtractor();
+        expect(extractor.fromHtml(domainPage))
+            .toEqual([{"name":"default._domainkey.example.it.","type":"TXT","content":"\"asd\/x1pVzUN1WlJ7asdFbZM04BZrV3bDjq0HJQXMpUJJOh\/CkNzxckzQIDAQAB;\"","ttl":3600,"locked":"0","id":1,"inserted":"0"},{"name":"www.example.it.","type":"A","content":"192.168.1.1","ttl":3600,"locked":"0","id":2,"inserted":"0"},{"name":"zxc.example.it.","type":"CNAME","content":"zcx.xzc.com.","ttl":3600,"locked":"0","id":3,"inserted":"0"},{"name":"dfg.example.it.","type":"CNAME","content":"dfg.example.it.s3-website-eu-west-1.amazonaws.com.","ttl":3600,"locked":"0","id":4,"inserted":"0"},{"name":"mail.example.it.","type":"A","content":"192.168.5.4","ttl":3600,"locked":"0","id":5,"inserted":"0"},{"name":"cpanel.example.it.","type":"A","content":"8192.168.9.20","ttl":3600,"locked":"0","id":6,"inserted":"0"},{"name":"smtp.example.it.","type":"TXT","content":"\"k=rsa; p=adsTdjpnuqdQxYInforjfNbfxcvxhp35\/E+cr6lRrYAoK\/RhyZWf6ChVnuCQb12Z8ct2WdW3NO2qweVHua+6JzwDsdfIDAQAB\"","ttl":3600,"locked":"0","id":7,"inserted":"0"},{"name":"email.xcv.example.it.","type":"CNAME","content":"xcv.org.","ttl":3600,"locked":"0","id":8,"inserted":"0"},{"name":"mg.example.it.","type":"TXT","content":"\"v=spf1 include:xcv.org ~all\"","ttl":3600,"locked":"0","id":9,"inserted":"0"},{"name":"example.it.","type":"TXT","content":"\"v=spf1 +mx +a +ip4:192.168.90.1 ~all\"","ttl":3600,"locked":"0","id":10,"inserted":"0"},{"name":"example.it.","type":"MX","content":"0 mail.example.it.","ttl":3600,"locked":"0","id":11,"inserted":"0"},{"name":"example.it.","type":"NS","content":"dns1.netsons.net.","ttl":3600,"locked":"1","id":12,"inserted":"0"},{"name":"example.it.","type":"NS","content":"dns2.netsons.net.","ttl":3600,"locked":"1","id":13,"inserted":"0"},{"name":"example.it.","type":"NS","content":"dns3.netsons.net.","ttl":3600,"locked":"1","id":14,"inserted":"0"},{"name":"example.it.","type":"NS","content":"dns4.netsons.net.","ttl":3600,"locked":"1","id":15,"inserted":"0"},{"name":"example.it.","type":"A","content":"192.168.7.6","ttl":3600,"locked":"0","id":16,"inserted":"0"}])
+    });
+});

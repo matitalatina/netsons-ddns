@@ -1,6 +1,9 @@
 interface IDnsEntry {
     name: string;
     type: string;
-    value: string;
+    content: string;
+    id: number;
+    locked: string;
+    inserted: string;
     ttl: number;
 }
