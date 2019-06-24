@@ -21,7 +21,8 @@ function start() {
 
     ddnsService
         .keepDdnsUpdated()
-        .then(() => console.log('All done!'));
+        .then(() => console.log('All done!'))
+        .catch((e) => console.error(e));
 }
 
 start();

@@ -16,7 +16,6 @@ export class DomainService {
 
         await this.netsonsClient.login(email, password);
         const domainHtml = await this.netsonsClient.getDomainPage(domainId);
-        console.log(domainHtml);
         const oldDnsEntry = this.domainExtractor
             .fromHtml(domainHtml)
             .find(e => e.name === updatedEntry.name);
