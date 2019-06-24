@@ -28,11 +28,13 @@ export class NetsonsClient {
                     "accept-language": "it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7",
                     "cache-control": "max-age=0",
                     "content-type": "application/x-www-form-urlencoded",
-                    "upgrade-insecure-requests": "1"
+                    "upgrade-insecure-requests": "1",
+                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
                 },
-                "body": `token=917cb382d5547e1419728d80b6fc1add7baa779a&token=917cb382d5547e1419728d80b6fc1add7baa779a&username=${encodeURIComponent(email)}&password=${password}&rememberme=on`,
-                "method": "POST"
-            })
+                "redirect": "manual",
+                "body": `username=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&rememberme=on`,
+                "method": "POST",
+            });
         const cookies = parseCookies(res);
         this.auth.setCookies(cookies);
         return res.status < 400;
@@ -57,7 +59,7 @@ export class NetsonsClient {
                 "method": "GET",
             });
 
-        return res.text();
+        return await res.text();
     }
 
     async updateDomainEntry(domainId: number, oldEntry: IDnsEntry, updatedEntry: IDnsUpdate): Promise<boolean> {

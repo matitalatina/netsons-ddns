@@ -19,7 +19,7 @@ describe('NetsonsClient', () => {
 
         const fetchMock = async (url: RequestInfo, init?: RequestInit): Promise<Response> => {    
             expect(url).toEqual('https://www.netsons.com/manage/dologin.php');
-            expect(init && init.body).toEqual(`token=917cb382d5547e1419728d80b6fc1add7baa779a&token=917cb382d5547e1419728d80b6fc1add7baa779a&username=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&rememberme=on`);
+            expect(init && init.body).toEqual(`username=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&rememberme=on`);
             const response = new Response("", {
                 headers: headers,
             });
