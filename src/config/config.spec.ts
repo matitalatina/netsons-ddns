@@ -1,4 +1,4 @@
-import { Config, NETSONS_EMAIL_ENV, NETSONS_PASSWORD_ENV, NETSONS_DOMAIN_ID_ENV } from './config';
+import { Config, NETSONS_EMAIL_ENV, NETSONS_PASSWORD_ENV, NETSONS_DOMAIN_ID_ENV, NETSONS_DNS_ENTRY_NAME_ENV } from './config';
 let config: Config;
 
 describe('Config', () => {
@@ -34,5 +34,15 @@ describe('Config', () => {
         expect(config.getDomainId()).toEqual(mockedDomainId);
 
         process.env[NETSONS_DOMAIN_ID_ENV] = oldDomainId;
+    });
+
+    it('should get dns entry name', () => {
+        const oldDnsEntryName = process.env[NETSONS_DNS_ENTRY_NAME_ENV];
+        const mockedDnsEntryName = 'www.example.it';
+
+        process.env[NETSONS_DNS_ENTRY_NAME_ENV] = `${mockedDnsEntryName}`;
+        expect(config.getDnsEntryName()).toEqual(mockedDnsEntryName);
+
+        process.env[NETSONS_DNS_ENTRY_NAME_ENV] = oldDnsEntryName;
     })
 });
