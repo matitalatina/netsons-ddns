@@ -4,6 +4,8 @@
   "description": "DDNS without Netsons API, because Netsons doesn't have it...",
   "main": "index.ts",
   "scripts": {
+    "start": "node dist/index.js",
+    "build": "parcel build src/index.ts --target node",
     "test": "jest"
   },
   "keywords": [
@@ -19,6 +21,7 @@
     "public-ip": "^3.1.0"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.15",
     "@types/node-fetch": "^2.3.7",
     "@typescript-eslint/eslint-plugin": "^1.10.2",
