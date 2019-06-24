@@ -15,7 +15,8 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.0.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "public-ip": "^3.1.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
