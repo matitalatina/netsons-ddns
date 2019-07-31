@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "node dist/index.js",
-    "build": "parcel build src/index.ts --target node",
+    "build": "parcel build src/index.ts --target node --bundle-node-modules",
     "test": "jest"
   },
   "keywords": [
