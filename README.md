@@ -9,7 +9,7 @@ If you have this situation like mine:
 
 - You have a dynamic IP assigned from your internet provider.
 - You have a domain handled by Netsons.
-- You want to keep updated an `A` DNS record in order that point always to your dynamic IP.
+- You want to keep updated an `A` DNS record in order to point always to your dynamic IP.
 
 ## Requirements
 
