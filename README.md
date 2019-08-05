@@ -3,7 +3,7 @@
 This projects aim to handle a DDNS using the domain provider Netsons.
 Unfortunately, Netsons doesn't expose any API to keep updated the DNS records. So I created this project.
 
-## Why should you use this application.
+## Why you should use this application
 
 If you have this situation like mine:
 
