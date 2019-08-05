@@ -26,7 +26,7 @@ If you have this situation like mine:
   You can avoid this step. You should provide those parameters inside your environment when you run the app.
 - `node dist/index.js` to start it.
 
-## How does it work
+## How it works
 
 This is the flow that follows:
 
