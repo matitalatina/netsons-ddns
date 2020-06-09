@@ -1,8 +1,7 @@
 # Netsons DDNS
 
 **[Update 2020-06-09]** *Netsons added [Google reCAPTCHA](https://www.google.com/recaptcha/intro/v3.html) on login page. So my app fails to login. I think there's no quick solution to overcome this issue. I'm open to pull requests if someone finds a solution.*
-
-*In the meantime, I switched my DDNS to [namecheap](https://www.namecheap.com/), [it's waaaay easier](https://www.namecheap.com/support/knowledgebase/article.aspx/29/11/how-do-i-use-a-browser-to-dynamically-update-the-hosts-ip) to keep DNS update.*
+*In the meantime, I switched my DDNS to [namecheap](https://www.namecheap.com/), [it's waaaay easier](https://www.namecheap.com/support/knowledgebase/article.aspx/29/11/how-do-i-use-a-browser-to-dynamically-update-the-hosts-ip) to keep DNS updated.*
 
 This projects aim to handle a DDNS using the domain provider Netsons.
 Unfortunately, Netsons doesn't expose any API to keep updated the DNS records. So I created this project.
