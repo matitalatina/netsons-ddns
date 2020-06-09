@@ -1,5 +1,6 @@
 import { Response, Headers, RequestInfo, RequestInit } from "node-fetch";
 import { NetsonsAuth } from './netsonsAuth';
+import { IDnsEntry, IDnsUpdate } from "./model/IDnsEntry";
 
 function parseCookies(response: Response): string[] {
     const raw = response.headers.raw()['set-cookie'];

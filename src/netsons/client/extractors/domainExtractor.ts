@@ -1,3 +1,5 @@
+import { IDnsEntry } from "../model/IDnsEntry";
+
 export class DomainExtractor {
     fromHtml(html: string): IDnsEntry[] {
         const entries = html.match(/[\t\s]+var smartyrrdb = .*]/);

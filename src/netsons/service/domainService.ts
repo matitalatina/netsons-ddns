@@ -1,6 +1,7 @@
 import { Config } from './../../config/config';
 import { DomainExtractor } from './../client/extractors/domainExtractor';
 import { NetsonsClient } from './../client/netsonsClient';
+import { IDnsUpdate } from '../client/model/IDnsEntry';
 
 export class DomainService {
     constructor(

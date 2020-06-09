@@ -10,7 +10,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-function start() {
+function start(): void {
     const config = new Config();
     const netsonsAuth = new NetsonsAuth();
     const ipService = new IpService();

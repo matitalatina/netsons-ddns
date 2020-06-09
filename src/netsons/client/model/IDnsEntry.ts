@@ -1,11 +1,11 @@
-interface IDnsUpdate {
+export interface IDnsUpdate {
     name: string;
     type: string;
     content: string;
     ttl: number;
 };
 
-interface IDnsEntry {
+export interface IDnsEntry {
     name: string;
     type: string;
     content: string;

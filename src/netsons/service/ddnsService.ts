@@ -1,6 +1,7 @@
 import { Config } from './../../config/config';
 import { IpService } from './ipService';
 import { DomainService } from './domainService';
+import { IDnsUpdate } from '../client/model/IDnsEntry';
 
 export class DdnsService {
     constructor(
